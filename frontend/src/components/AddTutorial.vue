@@ -4,23 +4,23 @@
       <div class="form-group">
         <label for="title">Title</label>
         <input
-            id="title"
-            v-model="tutorial.title"
             class="form-control"
-            name="title"
             required
+            id="title"
             type="text"
+            v-model="tutorial.title"
+            name="title"
         />
       </div>
 
       <div class="form-group">
         <label for="description">Description</label>
         <input
-            id="description"
-            v-model="tutorial.description"
             class="form-control"
-            name="description"
+            id="description"
             required
+            v-model="tutorial.description"
+            name="description"
         />
       </div>
 
@@ -56,7 +56,6 @@ export default {
         title: this.tutorial.title,
         description: this.tutorial.description
       };
-
       TutorialDataService.create(data)
           .then(response => {
             this.tutorial.id = response.data.id;
