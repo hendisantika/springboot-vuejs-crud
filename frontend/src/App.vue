@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <router-link class="navbar-brand" to="/">Hendi Santika</router-link>
+      <router-link class="navbar-brand" to="/">bezKoder</router-link>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
           <router-link class="nav-link" to="/tutorials">Tutorials</router-link>
@@ -19,19 +19,7 @@
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-}
+  name: "app"
+};
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
