@@ -46,15 +46,12 @@ export default class AddTutorial extends Vue {
     description: "",
     published: false,
   };
-
   private submitted: boolean = false;
-
   saveTutorial() {
     var data = {
       title: this.tutorial.title,
       description: this.tutorial.description,
     };
-
     TutorialDataService.create(data)
         .then((response) => {
           this.tutorial.id = response.data.id;
@@ -65,7 +62,6 @@ export default class AddTutorial extends Vue {
           console.log(e);
         });
   }
-
   newTutorial() {
     this.submitted = false;
     this.tutorial = {};
