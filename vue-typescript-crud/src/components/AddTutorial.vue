@@ -33,3 +33,49 @@
     </div>
   </div>
 </template>
+
+<script lang="ts">
+import {Component, Vue} from "vue-property-decorator";
+import TutorialDataService from "../services/TutorialDataService";
+
+@Component
+export default class AddTutorial extends Vue {
+  private tutorial: any = {
+    id: null,
+    title: "",
+    description: "",
+    published: false,
+  };
+
+  private submitted: boolean = false;
+
+  saveTutorial() {
+    var data = {
+      title: this.tutorial.title,
+      description: this.tutorial.description,
+    };
+
+    TutorialDataService.create(data)
+        .then((response) => {
+          this.tutorial.id = response.data.id;
+          console.log(response.data);
+          this.submitted = true;
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+  }
+
+  newTutorial() {
+    this.submitted = false;
+    this.tutorial = {};
+  }
+}
+</script>
+
+<style scoped>
+.submit-form {
+  max-width: 300px;
+  margin: auto;
+}
+</style>
