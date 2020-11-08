@@ -1,7 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">bezKoder</a>
+      <div class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/tutorials">Tutorials</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/add">Add</a>
+        </li>
+      </div>
+    </nav>
+
+    <div class="container mt-3">
+      <router-view/>
+    </div>
   </div>
 </template>
 
