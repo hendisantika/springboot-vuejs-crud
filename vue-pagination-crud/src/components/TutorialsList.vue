@@ -6,14 +6,12 @@
             type="text"
             class="form-control"
             placeholder="Search by title"
-            v-model="searchTitle"
-        />
+            v-model="searchTitle"/>
         <div class="input-group-append">
           <button
               class="btn btn-outline-secondary"
               type="button"
-              @click="page = 1; retrieveTutorials();"
-          >
+              @click="page = 1; retrieveTutorials();">
             Search
           </button>
         </div>
@@ -48,8 +46,7 @@
             :class="{ active: index == currentIndex }"
             v-for="(tutorial, index) in tutorials"
             :key="index"
-            @click="setActiveTutorial(tutorial, index)"
-        >
+            @click="setActiveTutorial(tutorial, index)">
           {{ tutorial.title }}
         </li>
       </ul>
@@ -74,12 +71,7 @@
           {{ currentTutorial.published ? "Published" : "Pending" }}
         </div>
 
-        <a
-            class="badge badge-warning"
-            :href="'/tutorials/' + currentTutorial.id"
-        >
-          Edit
-        </a>
+        <a class="badge badge-warning" :href="'/tutorials/' + currentTutorial.id">Edit</a>
       </div>
       <div v-else>
         <br />
