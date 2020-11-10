@@ -92,5 +92,26 @@ export default {
 
       return params;
     },
+
+
+    retrieveTutorials() {
+      const params = this.getRequestParams(
+          this.searchTitle,
+          this.page,
+          this.pageSize
+      );
+
+      TutorialDataService.getAll(params)
+          .then((response) => {
+            const { tutorials, totalItems } = response.data;
+            this.tutorials = tutorials;
+            this.count = totalItems;
+
+            console.log(response.data);
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+    },
 }
 </script>
