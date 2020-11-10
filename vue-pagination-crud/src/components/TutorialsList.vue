@@ -58,6 +58,8 @@
 </template>
 
 <script>
+import TutorialDataService from "../services/TutorialDataService";
+
 export default {
   name: "tutorials-list",
   data() {
@@ -93,7 +95,6 @@ export default {
       return params;
     },
 
-
     retrieveTutorials() {
       const params = this.getRequestParams(
           this.searchTitle,
@@ -113,5 +114,17 @@ export default {
             console.log(e);
           });
     },
-}
+
+    handlePageChange(value) {
+      this.page = value;
+      this.retrieveTutorials();
+    },
+
+    handlePageSizeChange(event) {
+      this.pageSize = event.target.value;
+      this.page = 1;
+      this.retrieveTutorials();
+    },
+  }
+};
 </script>
