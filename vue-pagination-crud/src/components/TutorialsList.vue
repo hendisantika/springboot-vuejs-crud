@@ -125,6 +125,12 @@ export default {
       this.page = 1;
       this.retrieveTutorials();
     },
+
+    refreshList() {
+      this.retrieveTutorials();
+      this.currentTutorial = null;
+      this.currentIndex = -1;
+    },
   }
 };
 </script>
