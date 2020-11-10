@@ -59,5 +59,20 @@
 
 <script>
 export default {
+  name: "tutorials-list",
+  data() {
+    return {
+      tutorials: [],
+      currentTutorial: null,
+      currentIndex: -1,
+      searchTitle: "",
+
+      page: 1,
+      count: 0,
+      pageSize: 3,
+
+      pageSizes: [3, 6, 9],
+    };
+  },
 }
 </script>
